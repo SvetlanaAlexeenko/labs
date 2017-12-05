@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class Repository {
     private int size;
-    private Person[] people = new Person[1];
+    private Person[] people;
 
     public Repository() {
         setSize(0);

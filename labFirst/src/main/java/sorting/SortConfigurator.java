@@ -8,7 +8,7 @@ import java.util.Properties;
  * Created by Света on 05.12.2017.
  */
 public class SortConfigurator {
-    private static SortConfigurator ourInstance=new SortConfigurator();
+    private static SortConfigurator instance=new SortConfigurator();
     public PersonSorter getSorter()throws IOException {
         Properties properties=new Properties();
         FileInputStream inputStream = new FileInputStream("labFirst\\src\\main\\resources\\config.properties");
@@ -27,8 +27,8 @@ public class SortConfigurator {
 
 
     public static SortConfigurator getInstance(){
-        return ourInstance;
+        return instance;
     }
-    private SortConfigurator(){}
+
 
 }
