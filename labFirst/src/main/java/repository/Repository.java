@@ -1,10 +1,9 @@
 package repository;
-import Searching.IdPersonChecker;
-import Searching.NamePersonChecker;
-import Searching.PersonChecker;
-import Sorting.PersonSorter;
-import Sorting.SortConfigurator;
-import com.sun.org.apache.xpath.internal.SourceTree;
+import searching.IdPersonChecker;
+import searching.NamePersonChecker;
+import searching.PersonChecker;
+import sorting.PersonSorter;
+import sorting.SortConfigurator;
 import comparators.PersonAgeComparator;
 import comparators.PersonFirstNameComparator;
 import comparators.PersonIdComparator;
@@ -12,7 +11,6 @@ import comparators.PersonLastNameComparator;
 import person.Person;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**

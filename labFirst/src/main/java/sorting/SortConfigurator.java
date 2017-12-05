@@ -1,4 +1,4 @@
-package Sorting;
+package sorting;
 
 import java.io.FileInputStream;
 import java.io.IOException;
