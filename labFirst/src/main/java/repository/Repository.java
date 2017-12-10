@@ -34,20 +34,15 @@ public class Repository {
             this.people[0] = person;
             this.size++;
         } else {
-            int q;
-            do {
-                Scanner sc = new Scanner(System.in);
-                System.out.println(" Add another person? Yes-1, No-0 ");
-                q = sc.next().charAt(0);
-                if (q == 1) {
+
                     Person[] newP = new Person[getSize() + 1];
                     System.arraycopy(this.people, 0, newP, 0, getSize());
                     newP[getSize()] = person;
                     setPeople(newP);
                     setSize(getSize() + 1);
                 }
-            }while (q == 1) ;
-        }
+
+
     }
 
     /**
