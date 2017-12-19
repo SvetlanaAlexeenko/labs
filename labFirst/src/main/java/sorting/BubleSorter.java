@@ -1,7 +1,5 @@
 package sorting;
 
-import person.Person;
-
 import java.util.Comparator;
 
 /**

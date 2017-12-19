@@ -2,8 +2,7 @@ package repository;
 
 import comparators.CarIdComparator;
 import comparators.CarModelComparator;
-import person.Car;
-import person.Person;
+import objects.Car;
 import searching.*;
 import sorting.SortConfigurator;
 import sorting.Sorter;

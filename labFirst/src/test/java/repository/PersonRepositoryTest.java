@@ -3,7 +3,7 @@ package repository;
 import org.joda.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
-import person.Person;
+import objects.Person;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

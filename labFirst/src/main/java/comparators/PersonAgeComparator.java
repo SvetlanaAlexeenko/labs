@@ -1,6 +1,6 @@
 package comparators;
 
-import person.Person;
+import objects.Person;
 
 import java.util.Comparator;
 

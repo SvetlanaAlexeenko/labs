@@ -1,6 +1,6 @@
 package searching;
 
-import person.Car;
+import objects.Car;
 
 /**
  * Created by Света on 17.12.2017.

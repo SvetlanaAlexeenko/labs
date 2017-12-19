@@ -6,7 +6,7 @@ import comparators.PersonIdComparator;
 import comparators.PersonLastNameComparator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import person.Person;
+import objects.Person;
 import searching.Checker;
 import searching.IdPersonChecker;
 import searching.NamePersonChecker;
@@ -14,7 +14,6 @@ import sorting.SortConfigurator;
 import sorting.Sorter;
 
 import java.io.IOException;
-import java.util.Iterator;
 
 /**
  * Created by Света on 11.12.2017.

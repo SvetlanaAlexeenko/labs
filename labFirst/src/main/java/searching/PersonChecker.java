@@ -1,6 +1,6 @@
 package searching;
 
-import person.Person;
+import objects.Person;
 
 /**
  * Created by Света on 05.12.2017.

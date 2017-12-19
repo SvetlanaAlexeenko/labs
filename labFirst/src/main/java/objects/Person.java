@@ -1,8 +1,6 @@
-package person;
+package objects;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
-
-import java.util.Comparator;
 
 /**
  * Created by Света on 28.11.2017.

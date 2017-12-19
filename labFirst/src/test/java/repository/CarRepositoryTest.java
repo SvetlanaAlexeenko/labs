@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.joda.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
-import person.Car;
+import objects.Car;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;

@@ -1,7 +1,7 @@
 package comparators;
 
 import java.util.Comparator;
-import person.Person;
+import objects.Person;
 
 /**
  * Created by Света on 04.12.2017.
