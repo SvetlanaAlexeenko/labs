@@ -9,19 +9,19 @@ import java.util.Properties;
  */
 public class SortConfigurator {
     private static SortConfigurator instance=new SortConfigurator();
-    public PersonSorter getSorter()throws IOException {
+    public Sorter getSorter()throws IOException {
         Properties properties=new Properties();
-        FileInputStream inputStream = new FileInputStream("labFirst\\src\\main\\resources\\config.properties");
+        FileInputStream inputStream = new FileInputStream("E:\\Netcracker\\java\\lab\\labFirst\\src\\main\\resources\\config.properties");
         properties.load(inputStream);
 
         String property=properties.getProperty("sorter");
         if(property.equals("buble")){
-            return new BublePersonSorter();
+            return new BubleSorter();
         }
         else if(property.equals("cocktail")){
-            return new CocktailPersonSorter();
+            return new CocktailSorter();
         } else {
-            return new BublePersonSorter();
+            return new BubleSorter();
         }
     }
 
@@ -29,6 +29,6 @@ public class SortConfigurator {
     public static SortConfigurator getInstance(){
         return instance;
     }
-
+    private SortConfigurator(){}
 
 }

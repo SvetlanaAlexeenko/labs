@@ -2,22 +2,30 @@ package person;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
+import java.util.Comparator;
+
 /**
  * Created by Света on 28.11.2017.
  */
 public class Person implements Comparable<Person> {
     private String firstName;
     private String lastName;
+    private static int count=0;
     private int id;
     private LocalDate dateOfBirth;
 
-    public Person(String firstName, String lastName, int id, LocalDate dateOfBirth) {
+    public Person(String firstName, String lastName, LocalDate dateOfBirth) {
+        count++;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.id = id;
+        this.id = count;
         this.dateOfBirth = dateOfBirth;
     }
 
+    /**
+     * age of person
+     * @return age
+     */
     public int getAge(){
         return Years.yearsBetween(dateOfBirth, LocalDate.now()).getYears();
     }
@@ -42,10 +50,6 @@ public class Person implements Comparable<Person> {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
@@ -65,7 +69,6 @@ public class Person implements Comparable<Person> {
     }
 
     public int compareTo(Person p) {
-        return (this.id -p.id);
+        return (this.count - p.count) ;
     }
-
 }

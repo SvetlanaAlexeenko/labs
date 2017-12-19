@@ -5,6 +5,6 @@ import person.Person;
 /**
  * Created by Света on 05.12.2017.
  */
-public interface PersonChecker {
-    public boolean check(Object o, Person person);
+public abstract class PersonChecker implements Checker<Person>{
+    public abstract boolean check(Object o, Person person);
 }

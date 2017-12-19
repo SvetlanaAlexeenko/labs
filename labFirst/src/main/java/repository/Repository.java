@@ -2,25 +2,28 @@ package repository;
 import searching.IdPersonChecker;
 import searching.NamePersonChecker;
 import searching.PersonChecker;
-import sorting.PersonSorter;
+import sorting.Sorter;
 import sorting.SortConfigurator;
 import comparators.PersonAgeComparator;
 import comparators.PersonFirstNameComparator;
 import comparators.PersonIdComparator;
 import comparators.PersonLastNameComparator;
 import person.Person;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.IOException;
-import java.util.Scanner;
+
 
 /**
  * Created by Света on 28.11.2017.
  */
-public class Repository {
+public class Repository{
+    private static Logger logger = LogManager.getLogger();
     private int size;
     private Person[] people;
 
     public Repository() {
+        logger.info("Create repository");
         setSize(0);
     }
 
@@ -29,12 +32,12 @@ public class Repository {
      * @param person
      */
     public void addPerson(Person person) {
+        logger.info("Add new Person");
         if (size == 0) {
             setPeople(new Person[1]);
             this.people[0] = person;
             this.size++;
         } else {
-
                     Person[] newP = new Person[getSize() + 1];
                     System.arraycopy(this.people, 0, newP, 0, getSize());
                     newP[getSize()] = person;
@@ -50,6 +53,7 @@ public class Repository {
      * @param id  index of element in repository
      */
     public void remove(int id) {
+        logger.info("Remove Person");
         int i;
         for (i = 0; i < getSize(); i++) {
             if (getPeople()[i].getId() == id)
@@ -66,37 +70,41 @@ public class Repository {
 
     public void sortByFirstName() {
         try {
-            PersonSorter sorter = SortConfigurator.getInstance().getSorter();
-            sorter.sort(getPeople(), new PersonFirstNameComparator());
+            Sorter sorter = SortConfigurator.getInstance().getSorter();
+            sorter.sort(this.getPeople(), new PersonFirstNameComparator());
+            logger.info("Sort by first name");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.catching(e);
         }
     }
 
     public void sortByLastName() {
         try {
-            PersonSorter sorter = SortConfigurator.getInstance().getSorter();
+            Sorter sorter = SortConfigurator.getInstance().getSorter();
             sorter.sort(getPeople(), new PersonLastNameComparator());
+            logger.info("Sort by last name");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.catching(e);
         }
     }
 
     public void sortById() {
         try {
-            PersonSorter sorter = SortConfigurator.getInstance().getSorter();
+            Sorter sorter = SortConfigurator.getInstance().getSorter();
             sorter.sort(getPeople(), new PersonIdComparator());
+            logger.info("Sort by id");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.catching(e);
         }
     }
 
     public void sortByAge() {
         try {
-            PersonSorter sorter = SortConfigurator.getInstance().getSorter();
+            Sorter sorter = SortConfigurator.getInstance().getSorter();
             sorter.sort(getPeople(), new PersonAgeComparator());
+            logger.info("Sort by age");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.catching(e);
         }
     }
 
@@ -118,10 +126,12 @@ public class Repository {
     }
 
     public Repository searchByFirstName(String name){
+        logger.info("Search by first name");
         return search(new NamePersonChecker(),name,this);
     }
 
     public Repository searchById(int id){
+        logger.info("Search by id");
         return search(new IdPersonChecker(),id,this);
     }
 
