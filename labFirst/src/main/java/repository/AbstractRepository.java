@@ -3,6 +3,9 @@ package repository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * implementation of general methods
  * Created by Света on 10.12.2017.
@@ -59,5 +62,30 @@ public abstract class AbstractRepository <T extends Comparable<T>> implements Re
 
     public void setRepository(Object[] repository) {
         this.repository = repository;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new OurIterator();
+    }
+
+    class OurIterator implements Iterator<T> {
+        int i = 0;
+
+        public boolean hasNext() {
+            if (i < getSize()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return (T)getRepository()[i++];
+        }
     }
 }
